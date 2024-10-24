@@ -53,8 +53,8 @@ function Footer() {
         <div className='block lg:flex gap-4 w-full justify-evenly mb-2 mt-4'>
             <div className='mb-4'>
                 <div className='flex gap-2 items-center'>
-                    <img src={require("../images/logo.jpeg")} className='w-10 lg:w-28 p-2 rounded-lg' />
-                    <span className='text-white font-bold text-lg lg:text-xl'>Crafted Furniture</span>
+                    <img src={require("../images/logo.jpeg")} className='w-10 lg:w-20 p-2 rounded-lg' />
+                    <span className='text-white font-bold text-base lg:text-lg'>Crafted Furniture Collection</span>
                 </div>
                 <div className='flex items-center mt-4 gap-2'>
                     <LocationOnIcon sx={{color: 'white', fontSize: 20}}/>

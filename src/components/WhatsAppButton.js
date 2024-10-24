@@ -2,8 +2,8 @@ import React from 'react';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 function WhatsAppButton() {
-  const phoneNumber = '+254736012377';
-  const message = 'Hello! I would like to get more information on Ruple Art platform.';
+  const phoneNumber = '+254792228028';
+  const message = 'Hello! I would like to get more information on Crafted Furnitures Collection platform.';
 
   const handleClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

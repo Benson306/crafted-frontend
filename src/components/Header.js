@@ -30,7 +30,7 @@ function Header() {
     };
 
     return (
-        <div className='bg-white flex fixed top-0 items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-3 font-montserrat overflow-hidden z-10'>
+        <div className='bg-white flex fixed top-0 items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-3 font-montserrat z-10'>
             <div className='flex items-center ml-1 lg:ml-5' onClick={()=>{
                 navigate("/")
             }}>
@@ -108,7 +108,7 @@ function Header() {
 
             {/* Mobile Menu Dropdown */}
             {menuOpen && (
-                <div className='lg:hidden absolute top-28 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2'>
+                <div className='lg:hidden absolute top-16 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
                     <ul className='flex flex-col items-center gap-3'>
                         <Link to={"/"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
                         <Link to={"/events"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Events</Link>

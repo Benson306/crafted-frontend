@@ -35,7 +35,7 @@ function Header() {
                 navigate("/")
             }}>
                 <img 
-                    src={require('../images/logo.png')} 
+                    src={require('../images/logo.jpeg')} 
                     className='w-12 max-w-full h-auto' 
                     alt="Logo"
                 />

@@ -53,20 +53,20 @@ function Footer() {
         <div className='block lg:flex gap-4 w-full justify-evenly mb-2 mt-4'>
             <div className='mb-4'>
                 <div className='flex gap-2 items-center'>
-                    <img src={require("../images/logo.png")} className='w-10 lg:w-14 bg-white p-2 rounded-lg' />
-                    <span className='text-white font-bold text-lg lg:text-xl'>Ruple Art</span>
+                    <img src={require("../images/logo.jpeg")} className='w-10 lg:w-28 p-2 rounded-lg' />
+                    <span className='text-white font-bold text-lg lg:text-xl'>Crafted Furniture</span>
                 </div>
                 <div className='flex items-center mt-4 gap-2'>
                     <LocationOnIcon sx={{color: 'white', fontSize: 20}}/>
-                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>Urban View Building, Latema Rd, Nairobi CBD</button>
+                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>Bakhita - Crescent Road, Utawala Nairobi.</button>
                 </div>
                 <div className='flex items-center mt-2 gap-2'>
                     <CallIcon sx={{color: 'white', fontSize: 20}} />
-                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>+254 759 324 250</button>
+                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>+254 792 228 028</button>
                 </div>
                 <div className='flex items-center mt-2 gap-2'>
                     <MailIcon sx={{color: 'white', fontSize: 20}} />
-                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>Rupleart@gmail.com</button>
+                    <button className='block text-gray-400 hover:text-gray-600 uppercase text-xs'>craftedfurniturecollectionke@gmail.com</button>
                 </div>
 
             </div>
@@ -147,22 +147,9 @@ function Footer() {
                 }
             </div>
 
-            <div className='mb-0 lg:mb-4 h-0 lg:h-max collapse lg:visible'>
-                <div className='h-0 lg:h-max collapse lg:visible font-bold text-white'>EVENTS</div>
-                {
-                    !eventsLoading && !error && events.length > 0 && events.slice(0,6).map(event => 
-                        <div onClick={() => {
-                            navigate("/events")
-                        }} 
-                        className='h-0 lg:h-max collapse lg:visible text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs cursor-pointer'>
-                            {event.title}
-                        </div>
-                    )
-                }
-                </div>
             </div>
       <div className='text-center p-2 text-xs mt-3 font-bold text-white'>
-        Ruple Art &copy; {year}
+        Crafted Furniture Collections &copy; {year}
       </div>
     </div>
   )

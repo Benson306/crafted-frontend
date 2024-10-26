@@ -60,7 +60,7 @@ function RelatedProducts({category}) {
 
                     <div className='text-center text-bold mt-3 text-sm'>{item.productName}</div>                    
 
-                    <div className='text-center text-purple-900 font-montserrat text-sm'>Ksh {item.price}</div>
+                    <div className='text-center  font-montserrat text-sm'>Ksh {item.price}</div>
                 </div>
                 </Link>
             ))}

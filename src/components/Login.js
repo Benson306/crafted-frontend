@@ -76,13 +76,13 @@ function Login() {
                             handleSubmit();
                         }} type="submit" 
                         value="Login" 
-                        className='w-full p-2 text-white bg-purple-900 hover:bg-purple-700 rounded-lg mt-4 uppercase' />
+                        className='w-full p-2 text-white bg-black hover:bg-gray-600 rounded-lg mt-4 uppercase' />
                     </div>
             </form>
 
             <div className='mt-2 text-sm flex gap-1 items-center'>
                 <span>I don't have an account? Register </span>
-                <Link to={"/register"} className='text-purple-900 hover:text-purple-700 hover:underline'>here</Link>
+                <Link to={"/register"} className=' hover:text-purple-700 hover:underline'>here</Link>
             </div>
         </div>
     </div>

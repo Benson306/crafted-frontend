@@ -255,7 +255,7 @@ const Checkout = () => {
                     {/* <div className="ml-12 lg:ml-0">KES. {total + deliveryCost}</div> */}
                 </div>
 
-                <button className="w-full lg:w-28 flex justify-center p-2 border-2 bg-purple-900 mt-5 lg:mt-10 hover:bg-purple-700 text-white rounded-lg" type="submit">
+                <button className="w-full lg:w-28 flex justify-center p-2 border-2 bg-black mt-5 lg:mt-10 hover:bg-gray-600 text-white rounded-lg" type="submit">
                     { loading &&  <div><SyncLoader size={6} color={"white"}/></div> }
                     {!loading && <div>PAY</div> }
                 </button>

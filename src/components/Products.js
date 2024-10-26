@@ -41,7 +41,7 @@ const Products = ({ category }) => {
     }
     return ( <div className='mt-2 lg:mt-5 mx-2 lg:mx-5'>
         { loading && <div className="text-center text-slate-500 text-md mb-5">Loading...</div>}
-        <div className="text-center font-bold text-slate-500 text-md mb-1 capitalize">{category == null ?  (<div>All Artworks</div>) : category}</div>
+        <div className="text-center font-bold text-slate-500 text-md mb-1 capitalize">{category == null ?  (<div>All Furniture</div>) : category}</div>
         <div className="text-center text-slate-500 text-md mb-5 text-sm">({!loading && filteredData.length} items)</div>
 
 
@@ -65,7 +65,7 @@ const Products = ({ category }) => {
 
                     <div className='text-center text-bold mt-3'>{item.productName}</div>                    
 
-                    <div className='text-center text-purple-900 font-montserrat'>Ksh {item.price}</div>
+                    <div className='text-center  font-montserrat'>Ksh {item.price}</div>
 
                     {/* Collapsible description */}
                     <div className='text-center text-sm lg:max-h-0 lg:overflow-hidden group-hover:max-h-20 transition-all duration-300 text-gray-700'>
@@ -77,7 +77,7 @@ const Products = ({ category }) => {
                     onClick={()=>{
                         handleAddToCart(item)
                     }}
-                    className='bg-purple-900 hover:bg-purple-700 text-white p-2 text-sm uppercase rounded-lg mt-2'>
+                    className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'>
                         add to cart
                     </button>
                     </div>

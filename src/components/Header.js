@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link, useNavigate } from 'react-router-dom';
@@ -7,6 +7,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useCart from '../utils/CartContext';
 import { AuthContext } from '../utils/AuthContext';
+import GradingIcon from '@mui/icons-material/Grading';
 
 function Header() {
     const { products } = useCart();
@@ -29,8 +30,30 @@ function Header() {
         setMenuOpen(!menuOpen);
     };
 
+    const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
+    useEffect(()=>{
+        fetch(`${process.env.REACT_APP_API_URL}/get_categories`)
+        .then(res => res.json())
+        .then(data => {
+            setCategories(data);
+            setLoading(false);
+        })
+        .catch(()=>{
+            setError(true);
+            setLoading(false);
+        })
+    },[])
+
     return (
-        <div className='bg-white flex fixed top-0 items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-3 font-montserrat z-10'>
+        <div className='bg-white fixed top-0 w-full'>
+        <div className='flex lg:hidden justify-center bg-white p-2 text-xs'>
+            <div className='border-r border-gray-900 px-2'>craftedfurniturecollectionke@gmail.com</div>
+            <div className='px-1'>+254 792 228 028</div>
+        </div>
+        <div className='flex justify-between items-center border-b border-gray-200 w-full p-2 font-montserrat z-10'>
             <div className='flex items-center ml-1 lg:ml-5' onClick={()=>{
                 navigate("/")
             }}>
@@ -41,99 +64,105 @@ function Header() {
                 />
             </div>
 
-            {/* Desktop Menu */}
-            <div className='hidden lg:flex items-center justify-end'>
-                <ul className='uppercase mr-1 lg:mr-5 tracking-wider text-sm'>
-                    <div className='flex gap-2'>
-                        <Link to={"/"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>Home</Link>
-                        <Link to={"/events"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>Events</Link>
-                        <Link to={"/about_us"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>About Us</Link>
-                        <Link to={"/contact_us"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>Contact Us</Link>
-                        { token && <Link to={"/orders"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>My Orders</Link> }
-                        <Link to={'/cart'} className='flex items-center px-2 hover:text-purple-900'>
-                            <ShoppingCartIcon fontSize={'small'} />
-                            <sup className="text-black">{products.length}</sup>
-                        </Link>
+            <div className='flex items-center'>
+                {/* Desktop Menu */}
+                <div className='flex items-center gap-5 justify-end'>
+                    <ul className='uppercase mr-1 lg:mr-5 tracking-wider text-sm'>
+                        <div className='flex gap-4 items-center lowercase'>
+                            <div className='hidden lg:block border-r border-gray-900 px-2'>craftedfurniturecollectionke@gmail.com</div>
+                            <div className='hidden lg:block px-2'>+254 792 228 028</div>
+                            <Link to={'/cart'} className='hidden lg:flex items-center px-2 hover:'>
+                                <ShoppingCartIcon fontSize={'small'} />
+                                <sup className="text-black">{products.length}</sup>
+                            </Link>
 
-                        {token !== null ? (
-                            <div className='relative'>
-                                <div className='hover:underline hover:text-purple-900 p-1 rounded-2xl flex items-center cursor-pointer' onClick={toggleDropdown}>
-                                    <PersonIcon sx={{fontSize: 20}} />
-                                </div>
-
-                                {dropdownVisible && (
-                                    <div className='fixed z-50 right-0 mt-2 w-40 bg-gray-100 shadow-lg rounded-md py-2'>
-                                        <button 
-                                            onClick={() => {
-                                                navigate('/profile');
-                                                toggleDropdown();
-                                            }} 
-                                            className='w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'
-                                        >
-                                            <PersonIcon sx={{fontSize: 16}} />
-                                            <span>My profile</span>
-                                        </button>
-                                        <button 
-                                            onClick={() => {
-                                                handleLogout();
-                                                toggleDropdown();
-                                            }} 
-                                            className='w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'
-                                        >
-                                            <LogoutIcon sx={{fontSize: 16}} />
-                                            <span>Logout</span>
-                                        </button>
+                            {token !== null ? (
+                                <div className='relative'>
+                                    <div className='hover:underline hover: p-1 rounded-2xl flex items-center cursor-pointer border border-gray-400 px-2 py-1' onClick={toggleDropdown}>
+                                        <PersonIcon sx={{fontSize: 20}} />
                                     </div>
-                                )}
+
+                                    {dropdownVisible && (
+                                        <div className='fixed z-50 right-0 mt-2 w-40 bg-gray-100 shadow-lg rounded-md py-2'>
+                                            <button 
+                                                onClick={() => {
+                                                    navigate('/profile');
+                                                    toggleDropdown();
+                                                }} 
+                                                className='w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'
+                                            >
+                                                <PersonIcon sx={{fontSize: 16}} />
+                                                <span>My profile</span>
+                                            </button>
+                                            <button onClick={() => {
+                                                    navigate('/orders');
+                                                    toggleDropdown();
+                                                }} className='w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'>
+                                                    <GradingIcon sx={{fontSize: 16}} />
+                                                    <span>My Orders</span>
+                                                </button>
+                                            <button 
+                                                onClick={() => {
+                                                    handleLogout();
+                                                    toggleDropdown();
+                                                }} 
+                                                className='w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'
+                                            >
+                                                <LogoutIcon sx={{fontSize: 16}} />
+                                                <span>Logout</span>
+                                            </button>
+                                        </div>
+                                    )}
+                                </div>
+                            ) : (
+                                <div>
+
+                                <Link to={"/login"} className='hidden lg:block hover:bg-black hover:text-white hover: p-1 rounded-2xl capitalize border border-gray-400 px-2 py-1'>
+                                    Login/Register
+                                </Link>
+                                <Link to={"/login"} className='block lg:hidden hover:bg-black hover:text-white hover: p-1 rounded-2xl capitalize border border-gray-400 px-2 py-1'>
+                                    <PersonIcon sx={{fontSize: 20}} />
+                                </Link>
                             </div>
-                        ) : (
-                            <Link to={"/login"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl'>Login/Register</Link>
-                        )}
+                            )}
+                        </div>
+                    </ul>
+                </div>
 
-                        {token && <Link to={"/myads"} className='bg-purple-900 hover:bg-purple-800 text-white rounded-lg text-xs flex px-2 items-center'>Post Ad</Link>}
+                {/* Mobile Menu and Icons */}
+                <div className='lg:hidden flex items-center justify-end'>
+                    <Link to={'/cart'} className='flex items-center px-2 hover:'>
+                        <ShoppingCartIcon fontSize={'small'} />
+                        <sup className="text-black">{products.length}</sup>
+                    </Link>
+                    <div className='ml-2 cursor-pointer' onClick={toggleMenu}>
+                        {menuOpen ? <CloseIcon /> : <MenuIcon />}
                     </div>
-                </ul>
-            </div>
-
-            {/* Mobile Menu and Icons */}
-            <div className='lg:hidden flex items-center'>
-                <Link to={'/cart'} className='flex items-center px-2 hover:text-purple-900'>
-                    <ShoppingCartIcon fontSize={'small'} />
-                    <sup className="text-black">{products.length}</sup>
-                </Link>
-                <div className='ml-2 cursor-pointer' onClick={toggleMenu}>
-                    {menuOpen ? <CloseIcon /> : <MenuIcon />}
                 </div>
             </div>
-
             {/* Mobile Menu Dropdown */}
             {menuOpen && (
-                <div className='lg:hidden absolute top-16 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
+                <div className='lg:hidden absolute top-24 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
                     <ul className='flex flex-col items-center gap-3'>
-                        <Link to={"/"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
-                        <Link to={"/events"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Events</Link>
-                        <Link to={"/about_us"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>About Us</Link>
-                        <Link to={"/contact_us"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Contact Us</Link>
-                        { token && <Link to={"/orders"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>My Orders</Link> }
-
-                        {token !== null ? (
-                            <>
-                                <Link to={"/profile"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl flex gap-2 items-center' onClick={toggleMenu}>
-                                    <PersonIcon sx={{fontSize: 16}} />
-                                    <span>My Profile</span>
-                                </Link>
-                                <button onClick={handleLogout} className='text-left px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-900 flex gap-2 items-center'>
-                                    <LogoutIcon sx={{fontSize: 16}} />
-                                    <span>Logout</span>
-                                </button>
-                                <Link to={"/myads"} className='bg-purple-900 hover:bg-purple-800 text-white rounded-lg text-xs flex p-2 items-center' onClick={toggleMenu}>Post Ad</Link>
-                            </>
-                        ) : (
-                            <Link to={"/login"} className='hover:underline hover:text-purple-900 p-1 rounded-2xl' onClick={toggleMenu}>Login/Register</Link>
-                        )}
+                        {
+                            categories.slice(0,11).map(category => (
+                                <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>{category.category}</Link>
+                            ))
+                        }
                     </ul>
                 </div>
             )}
+        </div>
+        <div className='hidden lg:flex items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-2 font-montserrat z-10 text-sm font-bold uppercase py-4'>
+            {/* Desktop Menu */}
+            <div className='hidden lg:flex items-center gap-10 mx-auto'>
+                {
+                    categories.slice(0,12).map(category => (
+                        <Link to={"/categoryproducts"} state={{ category }} className='hover:underline'>{category.category}</Link>
+                    ))
+                }
+            </div>
+        </div>  
         </div>
     );
 }

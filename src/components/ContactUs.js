@@ -94,7 +94,7 @@ function ContactUs() {
             <button onClick={e => {
                 e.preventDefault();
                 handleSubmit();
-            }} className='mt-5 flex justify-center gap-2 items-center bg-purple-900 hover:bg-purple-700 text-white p-2 mx-auto rounded-lg w-1/2'>
+            }} className='mt-5 flex justify-center gap-2 items-center bg-black hover:bg-gray-600 text-white p-2 mx-auto rounded-lg w-1/2'>
                 <div>Send</div>
             </button>
 

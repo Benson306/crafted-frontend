@@ -17,7 +17,7 @@ function AboutUs() {
 
         <div className='w-full lg:w-3/4 lg:mx-auto mt-5 text-sm font-montserrat mb-10 p-2'>
 
-        <div>Welcome to <b className='text-purple-900'>Rupleart</b>, where creativity meets opportunity! We are an online platform that connects artists with buyers from all around the world. Our mission is to support artists by providing them with a space to showcase their unique artwork, while offering art enthusiasts a diverse collection of one-of-a-kind pieces.</div>
+        <div>Welcome to <b className=''>Rupleart</b>, where creativity meets opportunity! We are an online platform that connects artists with buyers from all around the world. Our mission is to support artists by providing them with a space to showcase their unique artwork, while offering art enthusiasts a diverse collection of one-of-a-kind pieces.</div>
 
         <div className='mt-5'>At Rupleart, we believe that every artist deserves a chance to shine. Whether you are a painter, illustrator, or a creator of visual art, we give you the tools and platform to reach a wider audience and sell your work effortlessly. For art lovers, Rupleart provides a carefully curated selection of original paintings, drawings, and more—bringing beauty and inspiration to every space.</div>
 

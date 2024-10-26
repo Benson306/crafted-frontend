@@ -28,7 +28,7 @@ const SuccessTransaction = () => {
                 </div>
                 <div className="flex justify-center text-center px-10 ml-5 mb-5 text-lg" style={{fontSize:'3em'}}>&#x1F38A;</div>
                 <div className="flex justify-center px-10 ml-5 ">
-                    <Link to={'/'}><div className="w-48 flex justify-center p-2 bg-purple-900 hover:bg-purple-700 text-white rounded-lg text-sm" >
+                    <Link to={'/'}><div className="w-48 flex justify-center p-2 bg-black hover:bg-gray-600 text-white rounded-lg text-sm" >
                             HOME
                     </div></Link>
                 </div>

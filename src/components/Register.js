@@ -97,12 +97,12 @@ function Register() {
                         e.preventDefault();
                         handleSubmit();
                     }}
-                    className='w-full p-2 text-white bg-purple-900 hover:bg-purple-700 rounded-lg mt-4 uppercase'>Register</button>
+                    className='w-full p-2 text-white bg-black hover:bg-gray-600 rounded-lg mt-4 uppercase'>Register</button>
             </form>
 
             <div className='mt-2 text-sm flex gap-1 items-center'>
                 <span>I have an account? Login </span>
-                <Link to={"/login"} className='text-purple-900 hover:text-purple-700 hover:underline'>here</Link>
+                <Link to={"/login"} className=' hover:text-purple-700 hover:underline'>here</Link>
             </div>
         </div>
     </div>

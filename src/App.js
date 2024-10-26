@@ -30,6 +30,7 @@ import DmcaNotice from "./components/DCMANotice";
 import SuccessTransaction from "./components/SuccessTransaction";
 import FailedTransaction from "./components/FailedTransaction";
 import MyOrders from "./components/MyOrders";
+import ProductsPerCategory from "./components/ProductsPerCategory";
 
 function App() {
 
@@ -40,14 +41,14 @@ function App() {
     <div className="App flex flex-col min-h-screen">
     <CartProvider>
       <Header />
-      <div className="flex-grow bg-gray-100 mt-16">
+      <div className="flex-grow bg-gray-100 mt-24 lg:mt-28">
         <Routes>
           <Route path="/" element={<Shop />} />
           <Route path="/preview" element={<Preview />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/events" element={<Events />} />
+          {/* <Route path="/events" element={<Events />} /> */}
           <Route path="/about_us" element={<AboutUs />} />
           <Route path="/contact_us" element={<ContactUs />} />
           <Route path="/faq" element={<FAQ />} />
@@ -57,6 +58,7 @@ function App() {
           <Route path="/dcma" element={<DmcaNotice />} />
           <Route path="/confirm" element={<ConfirmPayment />} />
           <Route path="/cancel" element={<CancelTransaction />} />
+          <Route path="/categoryproducts" element={<ProductsPerCategory />} />
         
         
         {
@@ -64,7 +66,7 @@ function App() {
           <> 
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/profile" element={<MyProfile />} />
-            <Route path="/myads" element={<MyAds />} />
+            {/* <Route path="/myads" element={<MyAds />} /> */}
             <Route path="/orders" element={<MyOrders />} />
           </>
           :

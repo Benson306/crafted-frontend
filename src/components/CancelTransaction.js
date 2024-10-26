@@ -12,7 +12,7 @@ const CancelTransaction = () => {
                 You Have Cancelled Payment
             </div>
             <div className="flex justify-center px-10 ">
-                <Link to={'/checkout'}><div className="flex justify-center p-2 bg-purple-900 hover:bg-purple-700 text-white rounded-lg text-sm" >
+                <Link to={'/checkout'}><div className="flex justify-center p-2 bg-black hover:bg-gray-600 text-white rounded-lg text-sm" >
                         GO BACK
                 </div></Link>
             </div>

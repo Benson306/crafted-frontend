@@ -261,7 +261,7 @@ function MyAds() {
                     e.preventDefault();
                     setShowPasswordModal(true);
                 }}
-                className='bg-purple-900 hover:bg-purple-700 p-2 px-4 text-xs rounded-lg text-white'
+                className='bg-black hover:bg-gray-600 p-2 px-4 text-xs rounded-lg text-white'
             >
                     + Create an Ad
             </button>
@@ -476,7 +476,7 @@ function MyAds() {
                         e.preventDefault();
                         handleSubmit();
                     }} 
-                    className='bg-purple-900 hover:bg-purple-700 p-2 text-white rounded-lg'>Submit</button> }
+                    className='bg-black hover:bg-gray-600 p-2 text-white rounded-lg'>Submit</button> }
                     { submitLoading && <button onClick={e => {
                         e.preventDefault();
                     }} 
@@ -612,7 +612,7 @@ function MyAds() {
                         e.preventDefault();
                         handleEditSubmit();
                     }} 
-                    className='bg-purple-900 hover:bg-purple-700 p-2 text-white rounded-lg'>Submit</button> }
+                    className='bg-black hover:bg-gray-600 p-2 text-white rounded-lg'>Submit</button> }
                     { submitLoading && <button onClick={e => {
                         e.preventDefault();
                     }} 

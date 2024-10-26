@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function NewArtWorks() {
+function NewFurniture() {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
@@ -21,7 +21,7 @@ function NewArtWorks() {
     },[])
   return (
     <div className='font-montserrat mt-5 lg:mt-10 mx-5 lg:ml-14 mb-10'>
-        <div className='font-bold uppercase'>New ArtWorks</div>
+        <div className='font-bold uppercase'>New Furniture</div>
 
         { loading && <div className='text-gray-700'>Loading ...</div>}
 
@@ -36,7 +36,7 @@ function NewArtWorks() {
                         />
                         <div className='mt-1'>
                             <div className='font-semibold hover:font-extrabold text-xs'>{item.productName}</div>                    
-                            <div className='text-purple-900 hover:text-purple-700 font-montserrat text-xs mt-2'>Ksh {item.price}</div>
+                            <div className=' hover:text-purple-700 font-montserrat text-xs mt-2'>Ksh {item.price}</div>
                         </div>
                     </Link>
                 )
@@ -47,4 +47,4 @@ function NewArtWorks() {
   )
 }
 
-export default NewArtWorks
+export default NewFurniture

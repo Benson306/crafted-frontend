@@ -9,7 +9,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Twitter } from "@mui/icons-material";
 import RelatedProducts from "./RelatedProducts";
-import NewArtWorks from "./NewArtWorks";
+import NewFurniture from "./NewFurniture";
 
 const Preview = () => {
 
@@ -66,7 +66,7 @@ const Preview = () => {
                                 <div className="">Size:</div>
                                 <div>{data.size}</div>            
                             </div>
-                            <div className="my-2 lg:my-2 text-purple-900 font-extrabold">Ksh {data.price}</div>
+                            <div className="my-2 lg:my-2  font-extrabold">Ksh {data.price}</div>
                           
                             <div className="flex gap-2 items-center my-2 mt-4">
                                 <div className="">Quantity</div>
@@ -85,7 +85,7 @@ const Preview = () => {
                     </form>
 
                     <button 
-                        className="w-full lg:w-52 mt-10 p-2 bg-purple-900 hover:bg-purple-800 text-white rounded-md text-sm mx-auto lg:mx-0"
+                        className="w-full lg:w-52 mt-10 p-2 bg-black hover:bg-purple-800 text-white rounded-md text-sm mx-auto lg:mx-0"
                         onClick={() => handleAddToCart()}
                     >
                         ADD TO CART
@@ -110,7 +110,7 @@ const Preview = () => {
                 </div>
 
                 <div className="w-full lg:w-2/6 border-l">
-                    <NewArtWorks />
+                    <NewFurniture />
                 </div>
             </div>
 

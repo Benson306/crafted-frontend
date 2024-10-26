@@ -62,11 +62,11 @@ const Cart = () => {
             </div>
             <div className="flex justify-center px-10 ml-5 lg:mb-8">
                 {
-                    token !== null ? <Link to={'/checkout'}><div className="w-48 flex justify-center p-1 border-2 bg-purple-900 hover:bg-purple-700 rounded-lg text-white" >
+                    token !== null ? <Link to={'/checkout'}><div className="w-48 flex justify-center p-1 border-2 bg-black hover:bg-gray-600 rounded-lg text-white" >
                         CHECKOUT
                 </div></Link>
                 :
-                <Link to={'/login'}><div className="w-48 flex justify-center p-1 border-2 bg-purple-900 hover:bg-purple-700 rounded-lg text-white" >
+                <Link to={'/login'}><div className="w-48 flex justify-center p-1 border-2 bg-black hover:bg-gray-600 rounded-lg text-white" >
                         CHECKOUT
                 </div></Link>
                 }

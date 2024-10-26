@@ -37,7 +37,7 @@ function Events() {
                 <div className='block lg:flex gap-4'>
                     <img src={`${process.env.REACT_APP_API_URL}/uploads/${event.poster}`} className='w-28 h-28 object-cover' />
                     <div>
-                        <button className='text-purple-900 font-bold uppercase hover:underline mt-2'>{event.title}</button>
+                        <button className=' font-bold uppercase hover:underline mt-2'>{event.title}</button>
                         <div className='mt-2 text-gray-600'>{event.description}</div>
                         <div className='mt-1 text-gray-900 flex items-center gap-2'>
                             <LocationOn sx={{fontSize:16}} />
@@ -67,7 +67,7 @@ function Events() {
                 <div className='block lg:flex gap-4'>
                     <img src={`${process.env.REACT_APP_API_URL}/uploads/${event.poster}`} className='w-28 h-28 object-cover' />
                     <div>
-                        <button className='text-purple-900 font-bold uppercase hover:underline mt-2'>{event.title}</button>
+                        <button className=' font-bold uppercase hover:underline mt-2'>{event.title}</button>
                         <div className='mt-2 text-gray-600'>{event.description}</div>
                         <div className='mt-1 font-bold'>{event.venue}</div>
                         <div className='mt-1'>{event.date}</div>

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Products from './Products';
-import NewArtWorks from './NewArtWorks';
+import NewFurniture from './NewFurniture';
 import CarouselSection from './CarouselSection';
 
 const Shop = () => {
@@ -28,7 +28,7 @@ const Shop = () => {
 
     return ( 
     <div>  
-      <CarouselSection />
+      {/* <CarouselSection /> */}
       <div className='block lg:flex mx-2 lg:mx-5 gap-4 mb-10 min-h-screen'>
         <div className='collapse lg:visible h-0 lg:h-full w-0 lg:w-1/6'>
             <div className='font-montserrat mt-10 ml-14'>
@@ -63,7 +63,7 @@ const Shop = () => {
                         )
                     }          
                 </div>
-                <NewArtWorks />
+                <NewFurniture />
         </div>
         <div className='w-full lg:w-5/6'>
             <div className="flex justify-center lg:justify-end gap-2 text-sm items-center mt-2 lg:mt-5 lg:mr-5">

@@ -163,7 +163,7 @@ function MyProfile() {
                 <Field type="text" name="phoneNumber" onChange={e => {setPhoneNumber(e.target.value)}} value={props.values.phoneNumber} placeholder="Phone Number" className="border-b-2 p-2 mb-2 w-full text-sm" />
                 </div>
 
-                <button className="w-28 flex justify-center p-2 border-2 bg-purple-900 mt-3 hover:bg-purple-700 text-white rounded-lg" type="submit">
+                <button className="w-28 flex justify-center p-2 border-2 bg-black mt-3 hover:bg-gray-600 text-white rounded-lg" type="submit">
                     { loading &&  <div><SyncLoader size={6} color={"white"}/></div> }
                     {!loading && <div className='text-sm'>Save changes</div> }
                 </button>
@@ -207,7 +207,7 @@ function MyProfile() {
                                 </div>
                                 <div className="flex justify-end gap-4 text-sm">
                                     <button type="button" className="text-gray-600" onClick={() => setShowPasswordModal(false)}>Cancel</button>
-                                    <button type="submit" className="bg-purple-900 text-white p-2 rounded-lg">
+                                    <button type="submit" className="bg-black text-white p-2 rounded-lg">
                                         { loading &&  <div><SyncLoader size={6} color={"white"}/></div> }
                                         {!loading && <div className='text-sm'>Change Password</div> }
                                     </button>

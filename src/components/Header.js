@@ -8,6 +8,9 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import useCart from '../utils/CartContext';
 import { AuthContext } from '../utils/AuthContext';
 import GradingIcon from '@mui/icons-material/Grading';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 function Header() {
     const { products } = useCart();
@@ -53,6 +56,26 @@ function Header() {
             <div className='border-r border-gray-900 px-2'>craftedfurniturecollectionke@gmail.com</div>
             <div className='px-1'>+254 792 228 028</div>
         </div>
+        <div className='flex lg:hidden justify-center gap-4 items-center'>
+            <Link to={"https://www.facebook.com/craftedfurniturecollectionke?mibextid=ZbWKwL"} target='_blank'>
+                <FacebookIcon />
+            </Link>
+            <Link to={"https://www.instagram.com/craftedfurniturecollectionke/profilecard/?igsh=MXFicnA1bnNsOGgxMQ=="} target='_blank'>
+                <InstagramIcon />
+            </Link>
+            <Link to={"https://youtube.com/@craftedfurniturecollectionkelt?si=-pP-NM2eQJcvnrgt"} target='_blank'>
+                <YouTubeIcon />
+            </Link>
+            <Link to={"https://x.com/craftedfurkenya?t=-RJG8Yhwvtm7_pdFe2S82A&s=08"} target='_blank'>
+                <img src={require('../images/twitter (1).png')} className='w-4'/>
+            </Link>
+            <Link to={"https://www.threads.net/@craftedfurniturecollectionke?invite=0"} target='_blank'>
+                <img src={require('../images/threads.png')} className='w-5'/>
+            </Link>
+            <Link to={"https://www.tiktok.com/@craftedfurniturekenya?_t=8qtdZmsanFW&_r=1"} target='_blank'>
+                <img src={require('../images/tik-tok.png')} className='w-5'/>
+            </Link>                                
+        </div>
         <div className='flex justify-between items-center border-b border-gray-200 w-full p-2 font-montserrat z-10'>
             <div className='flex items-center ml-1 lg:ml-5' onClick={()=>{
                 navigate("/")
@@ -71,6 +94,27 @@ function Header() {
                         <div className='flex gap-4 items-center lowercase'>
                             <div className='hidden lg:block border-r border-gray-900 px-2'>craftedfurniturecollectionke@gmail.com</div>
                             <div className='hidden lg:block px-2'>+254 792 228 028</div>
+                            <div className='hidden lg:flex gap-4 mr-20 items-center'>
+                                <Link to={"https://www.facebook.com/craftedfurniturecollectionke?mibextid=ZbWKwL"} target='_blank'>
+                                    <FacebookIcon />
+                                </Link>
+                                <Link to={"https://www.instagram.com/craftedfurniturecollectionke/profilecard/?igsh=MXFicnA1bnNsOGgxMQ=="} target='_blank'>
+                                    <InstagramIcon />
+                                </Link>
+                                <Link to={"https://youtube.com/@craftedfurniturecollectionkelt?si=-pP-NM2eQJcvnrgt"} target='_blank'>
+                                    <YouTubeIcon />
+                                </Link>
+                                <Link to={"https://x.com/craftedfurkenya?t=-RJG8Yhwvtm7_pdFe2S82A&s=08"} target='_blank'>
+                                    <img src={require('../images/twitter (1).png')} className='w-4'/>
+                                </Link>
+                                <Link to={"https://www.threads.net/@craftedfurniturecollectionke?invite=0"} target='_blank'>
+                                    <img src={require('../images/threads.png')} className='w-5'/>
+                                </Link>
+                                <Link to={"https://www.tiktok.com/@craftedfurniturekenya?_t=8qtdZmsanFW&_r=1"} target='_blank'>
+                                    <img src={require('../images/tik-tok.png')} className='w-5'/>
+                                </Link>                                
+                            </div>
+                            
                             <Link to={'/cart'} className='hidden lg:flex items-center px-2 hover:'>
                                 <ShoppingCartIcon fontSize={'small'} />
                                 <sup className="text-black">{products.length}</sup>
@@ -142,7 +186,7 @@ function Header() {
             </div>
             {/* Mobile Menu Dropdown */}
             {menuOpen && (
-                <div className='lg:hidden absolute top-24 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
+                <div className='lg:hidden absolute top-28 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
                     <ul className='flex flex-col items-center gap-3'>
                     <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
                         {

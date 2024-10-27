@@ -80,7 +80,7 @@ const Shop = () => {
                 >
                     <option value={null}>All</option> 
                     {
-                        !loading && !error && categories.map(category => 
+                        !loading && !error && categories.length > 0 && categories.map(category => 
                         ( 
                             <option value={category.category}>{category.category}</option> 
                         )
@@ -88,6 +88,7 @@ const Shop = () => {
                 </select>
             </div>
             <Products category={selectedCategory}/>
+
         </div>
     </div>
     </div> );

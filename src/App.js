@@ -43,7 +43,7 @@ function App() {
     <div className="App flex flex-col min-h-screen">
     <CartProvider>
       <Header />
-      <div className="flex-grow bg-gray-100 mt-24 lg:mt-28">
+      <div className="flex-grow bg-gray-100 mt-28 lg:mt-32">
         <Routes>
           <Route path="/" element={
             <>

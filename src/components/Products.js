@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useCart from '../utils/CartContext';
+import { ToastContainer } from 'react-toastify';
 
 const Products = ({ category }) => {
 
@@ -40,6 +41,7 @@ const Products = ({ category }) => {
         addToCart({ ...data, quantity: Number(quantity) });
     }
     return ( <div className='mt-2 lg:mt-5 mx-2 lg:mx-5'>
+        <ToastContainer />
         { loading && <div className="text-center text-slate-500 text-md mb-5">Loading...</div>}
         <div className="text-center font-bold text-slate-500 text-md mb-1 capitalize">{category == null ?  (<div>All Furniture</div>) : category}</div>
         <div className="text-center text-slate-500 text-md mb-5 text-sm">({!loading && filteredData.length} items)</div>
@@ -76,7 +78,7 @@ const Products = ({ category }) => {
                     <button 
                     onClick={(e)=>{
                         e.preventDefault();
-                        handleAddToCart(item)
+                        handleAddToCart(item);
                     }}
                     className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'>
                         add to cart

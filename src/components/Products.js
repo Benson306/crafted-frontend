@@ -13,7 +13,6 @@ const Products = ({ category }) => {
         .then((res)=> res.json())
         .then((res)=>{
             setProducts(res);
-            console.log(res)
             setLoading(false);
         })
         .catch(err => {

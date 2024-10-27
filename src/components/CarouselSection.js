@@ -19,7 +19,7 @@ function CarouselSection() {
     >
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/curology-6CJg-fOTYs4-unsplash.jpg')}
+          src={require('../images/carousel/1.jpg')}
           alt="image 1"
           className="h-full w-full object-cover"
         />
@@ -35,9 +35,9 @@ function CarouselSection() {
             <Typography
               variant="lead"
               color="white"
-              className="mb-9 opacity-80 text-xs lg:text-sm"
+              className="mb-9 opacity-80 text-base"
             >
-              Craftsmanship that stands the test of time.
+              Transform Your Home into a Masterpiece – Explore Furniture as Unique as You Are.
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {
@@ -56,9 +56,9 @@ function CarouselSection() {
       </div>
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/paul-weaver-nWidMEQsnAQ-unsplash (1).jpg')}
+          src={require('../images/carousel/4.jpg')}
           alt="image 2"
-          className="h-full w-full object-fill"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
@@ -72,9 +72,9 @@ function CarouselSection() {
             <Typography
               variant="lead"
               color="white"
-              className="mb-9 opacity-80 text-sm"
+              className="mb-9 opacity-80 text-base"
             >
-              Craftsmanship that stands the test of time.
+              Craft Your Space with Timeless Elegance – Discover Handcrafted Furniture Tailored Just for You
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {
@@ -93,9 +93,9 @@ function CarouselSection() {
       </div>
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/toa-heftiba-FV3GConVSss-unsplash.jpg')}
+          src={require('../images/carousel/3.jpg')}
           alt="image 3"
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
@@ -109,9 +109,9 @@ function CarouselSection() {
             <Typography
               variant="lead"
               color="white"
-              className="mb-9 opacity-80 text-sm"
+              className="mb-9 opacity-80 text-base"
             >
-              Craftsmanship that stands the test of time.
+              Where Quality Meets Comfort – Elevate Every Room with Style That Lasts.
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {

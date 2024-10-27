@@ -141,7 +141,7 @@ const Preview = () => {
                     </form>
 
                     <button 
-                        className="w-full lg:w-52 mt-10 p-2 bg-black hover:bg-purple-800 text-white rounded-md text-sm mx-auto lg:mx-0"
+                        className="w-full lg:w-52 mt-10 p-2 bg-black hover:bg-gray-500 text-white rounded-md text-sm mx-auto lg:mx-0"
                         onClick={() => handleAddToCart()}
                     >
                         ADD TO CART

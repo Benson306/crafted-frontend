@@ -144,6 +144,7 @@ function Header() {
             {menuOpen && (
                 <div className='lg:hidden absolute top-24 right-0 w-full bg-gray-100 shadow-lg rounded-md py-2 z-50'>
                     <ul className='flex flex-col items-center gap-3'>
+                    <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
                         {
                             categories.slice(0,11).map(category => (
                                 <Link to={"/categoryproducts"} state={{ category }} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>{category.category}</Link>
@@ -156,6 +157,7 @@ function Header() {
         <div className='hidden lg:flex items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-2 font-montserrat z-10 text-sm font-bold uppercase py-4'>
             {/* Desktop Menu */}
             <div className='hidden lg:flex items-center gap-10 mx-auto'>
+                <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
                 {
                     categories.slice(0,12).map(category => (
                         <Link to={"/categoryproducts"} state={{ category }} className='hover:underline'>{category.category}</Link>

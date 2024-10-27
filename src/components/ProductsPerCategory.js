@@ -6,7 +6,7 @@ function ProductsPerCategory() {
     const location = useLocation();
     const { category } = location.state;
   return (
-    <div className='mt-10'>
+    <div className='mt-10 mb-40'>
 
         <Products category={category.category}/>
       

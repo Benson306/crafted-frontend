@@ -30,14 +30,14 @@ function CarouselSection() {
               color="white"
               className="mb-4 text-lg md:text-xl lg:text-2xl"
             >
-              RUPLEART
+              Crafted Furniture Collection
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-9 opacity-80 text-xs lg:text-sm"
             >
-              Rupleart is an innovative online platform designed to bring artists and art enthusiasts together. As a marketplace for creativity, Rupleart allows artists to showcase their paintings, drawings, and other forms of visual art to a global audience. Our mission is to support artists by providing them with an accessible and dynamic space to sell their original artwork, while offering buyers a diverse collection of unique pieces to discover and purchase
+              Craftsmanship that stands the test of time.
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {
@@ -67,14 +67,14 @@ function CarouselSection() {
               color="white"
               className="mb-4 text-lg md:text-xl lg:text-2xl"
             >
-              RUPLEART
+              Crafted Furniture Collection
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-9 opacity-80 text-sm"
             >
-              Whether you’re an artist looking to grow your audience and sell your work, or an art lover searching for the perfect piece to complete your space, Rupleart is the ultimate destination for connecting talent with appreciation. The platform ensures smooth transactions, secure payments, and a personalized experience for both buyers and sellers
+              Craftsmanship that stands the test of time.
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {
@@ -104,14 +104,14 @@ function CarouselSection() {
               color="white"
               className="mb-4 text-lg md:text-xl lg:text-2xl"
             >
-              RUPLEART
+              Crafted Furniture Collection
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-9 opacity-80 text-sm"
             >
-              Rupleart makes art accessible to everyone, transforming every space into a work of art, one piece at a time.
+              Craftsmanship that stands the test of time.
             </Typography>
             <div className="flex justify-center gap-2">
               <Button size="sm" color="white" onClick={()=> {

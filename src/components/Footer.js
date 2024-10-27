@@ -127,7 +127,7 @@ function Footer() {
                         behavior: 'smooth',
                     });
                 }}
-                to={"/terms"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>Terms of Use</Link>
+                to={"/terms"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>Terms & Conditions</Link>
 
                 <Link onClick={()=>{
                     window.scrollTo({

@@ -28,7 +28,7 @@ const Shop = () => {
 
     return ( 
     <div>  
-      {/* <CarouselSection /> */}
+      <CarouselSection />
       <div className='block lg:flex mx-2 lg:mx-5 gap-4 mb-10 min-h-screen'>
         <div className='collapse lg:visible h-0 lg:h-full w-0 lg:w-1/6'>
             <div className='font-montserrat mt-10 ml-14'>

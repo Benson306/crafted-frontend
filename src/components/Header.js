@@ -48,7 +48,7 @@ function Header() {
     },[])
 
     return (
-        <div className='bg-white fixed top-0 w-full'>
+        <div className='bg-white fixed top-0 w-full z-50'>
         <div className='flex lg:hidden justify-center bg-white p-2 text-xs'>
             <div className='border-r border-gray-900 px-2'>craftedfurniturecollectionke@gmail.com</div>
             <div className='px-1'>+254 792 228 028</div>
@@ -146,7 +146,7 @@ function Header() {
                     <ul className='flex flex-col items-center gap-3'>
                         {
                             categories.slice(0,11).map(category => (
-                                <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>{category.category}</Link>
+                                <Link to={"/categoryproducts"} state={{ category }} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>{category.category}</Link>
                             ))
                         }
                     </ul>

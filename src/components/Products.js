@@ -13,6 +13,7 @@ const Products = ({ category }) => {
         .then((res)=> res.json())
         .then((res)=>{
             setProducts(res);
+            console.log(res)
             setLoading(false);
         })
         .catch(err => {
@@ -57,15 +58,15 @@ const Products = ({ category }) => {
                     {/* Image container with standard size and smooth resizing on hover */}
                     <div className='flex justify-center items-center'>
                     <img 
-                        src={`${process.env.REACT_APP_API_URL}/uploads/${item.image}`} 
+                        src={`${process.env.REACT_APP_API_URL}/uploads/${item.image[0]}`} 
                         alt={item.productName} 
                         className='transition-all duration-300 object-cover w-64 h-64 group-hover:w-60 group-hover:h-60' 
                     />
                     </div>
 
-                    <div className='text-center text-bold mt-3'>{item.productName}</div>                    
+                    <div className='text-center font-bold mt-3'>{item.productName}</div>                    
 
-                    <div className='text-center  font-montserrat'>Ksh {item.price}</div>
+                    <div className='text-center  font-montserrat text-sm'>Ksh {item.price}</div>
 
                     {/* Collapsible description */}
                     <div className='text-center text-sm lg:max-h-0 lg:overflow-hidden group-hover:max-h-20 transition-all duration-300 text-gray-700'>
@@ -74,7 +75,8 @@ const Products = ({ category }) => {
 
                     <div className='flex justify-center lg:max-h-0 lg:overflow-hidden group-hover:max-h-20 transition-all duration-300'>
                     <button 
-                    onClick={()=>{
+                    onClick={(e)=>{
+                        e.preventDefault();
                         handleAddToCart(item)
                     }}
                     className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'>

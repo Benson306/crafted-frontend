@@ -19,7 +19,7 @@ function CarouselSection() {
     >
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/sticks.jpg')}
+          src={require('../images/carousel/curology-6CJg-fOTYs4-unsplash.jpg')}
           alt="image 1"
           className="h-full w-full object-cover"
         />
@@ -56,9 +56,9 @@ function CarouselSection() {
       </div>
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/sculpture.jpg')}
+          src={require('../images/carousel/paul-weaver-nWidMEQsnAQ-unsplash (1).jpg')}
           alt="image 2"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-fill"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">
@@ -93,9 +93,9 @@ function CarouselSection() {
       </div>
       <div className="relative h-96 w-full">
         <img
-          src={require('../images/carousel/purple.jpg')}
+          src={require('../images/carousel/toa-heftiba-FV3GConVSss-unsplash.jpg')}
           alt="image 3"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-contain"
         />
         <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
           <div className="w-3/4 text-center md:w-2/4">

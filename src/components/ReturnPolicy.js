@@ -1,93 +1,62 @@
-import React from 'react'
+import React from 'react';
 
 function ReturnPolicy() {
   return (
     <div>
-        <div className="relative w-full h-56 lg:h-60 bg-black opacity-80">
-            <img
-                src={require('../images/carousel/purple.jpg')}
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                alt="Background"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-white text-md lg:text-2xl font-bold">Return Policy</h1>
-            </div>
+      <div className="relative w-full h-56 lg:h-60">
+          <img
+            src={require('../images/carousel/pexels-fotoaibe-1571460.jpg')}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Background"
+          />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-xl lg:text-2xl font-bold text-white">Return Policy</h1>
+          </div>
         </div>
-    <div className="max-w-3xl mx-auto p-6 bg-gray-100 rounded-md shadow-lg mb-10 mt-5 text-sm">
-      <p className="mb-4">
-        At Rupleart, we aim to provide a seamless experience for both buyers and artists. Since the artwork sold 
-        on our platform is often one-of-a-kind, we encourage careful consideration before making a purchase. 
-        However, we understand that issues may arise, and we have set forth the following guidelines for 
-        returns and refunds.
-      </p>
+      <div className="max-w-3xl mx-auto p-6 bg-gray-100 rounded-md shadow-lg mb-10 mt-5 text-sm">
+        <p className="mb-4">
+          At <b>Crafted Furniture Collections</b>, we strive to ensure that our customers are completely satisfied with their purchases. Our return policy outlines the terms and conditions under which we accept returns and exchanges, ensuring clarity and fairness for both parties. We understand that sometimes items may not meet your expectations, and we are committed to resolving any issues that arise.
+        </p>
 
-      <h2 className="text-md font-semibold mt-6 mb-2">1. General Return Policy</h2>
-      <p className="mb-2 text-sm">
-        <strong>1.1 Final Sale:</strong> All artwork purchases are generally considered final sale unless otherwise specified by 
-        the artist. We encourage buyers to read the artist’s return policy on each artwork listing before 
-        completing a purchase.
-      </p>
-      <p className="mb-2 text-sm">
-        <strong>1.2 Return Eligibility:</strong> Buyers may be eligible for a return or exchange under the following 
-        circumstances:
-      </p>
-      <ul className="list-disc pl-6 mb-2">
-        <li>The artwork arrives damaged.</li>
-        <li>The artwork received significantly differs from the description or images provided.</li>
-        <li>The artist has explicitly offered a return policy for that specific artwork.</li>
-      </ul>
-      <p className="mb-2 text-sm">
-        <strong>1.3 Non-Returnable Items:</strong> Customized or commissioned artwork, digital downloads, or any 
-        personalized items are not eligible for returns unless they arrive damaged or faulty.
-      </p>
+        <h2 className="text-md font-semibold mt-6 mb-2">4. Returns and Exchanges</h2>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.1. Returns:</h3>
+        <p className="mb-2">
+          All items must be thoroughly inspected and confirmed by the customer before delivery, either in person or through video communication. This step is crucial in ensuring that you receive the correct product in good condition. Upon delivery of the item, our company does not support returns of items unless they are found to be damaged upon arrival. We encourage our customers to inspect their purchases carefully and report any issues immediately to facilitate a swift resolution.
+        </p>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.2. Non-Eligible Items:</h3>
+        <p className="mb-2">
+          Please note that certain items may not be eligible for return or exchange. This includes custom-made products, special orders, and items specifically tailored to meet individual customer specifications. We believe in providing our customers with unique products, and as such, these items are not returnable. Before placing an order for such items, we recommend confirming all details to ensure complete satisfaction.
+        </p>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.3. Return Shipping Costs:</h3>
+        <p className="mb-2">
+          If you need to return a product that is eligible for return (i.e., damaged or defective upon delivery), please be aware that you are responsible for the cost of return shipping unless the products were damaged or defective upon arrival. We advise using a trackable shipping service or purchasing shipping insurance for items over a certain value to ensure their safe return.
+        </p>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.4. Returns Process:</h3>
+        <p className="mb-2">
+          To initiate a return, please contact our customer service team within [insert timeframe, e.g., 14 days] of receiving your item. We will provide you with the necessary instructions and any required documentation to facilitate the return process. Timely communication is essential for us to assist you efficiently.
+        </p>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.5. Refund Processing:</h3>
+        <p className="mb-2">
+          Once your return is received and inspected, we will notify you of the approval or rejection of your refund. If approved, your refund will be processed within a certain number of days, and a credit will automatically be applied to your original payment method. Please note that depending on your bank or credit card company, it may take some additional time before the refund is officially posted.
+        </p>
+        
+        <h3 className="font-semibold mt-4 mb-2">4.6. Exchange Policy:</h3>
+        <p className="mb-2">
+          If you wish to exchange an item for a different size or model, please follow the same process as a return. We will assist you in placing a new order once we receive the returned item. Exchanges are subject to product availability.
+        </p>
 
-      <h2 className="text-md font-semibold mt-6 mb-2">2. Reporting a Problem</h2>
-      <p className="mb-2 text-sm">
-        <strong>2.1 Damaged Artwork:</strong> If your artwork arrives damaged, you must report the issue to both the artist and 
-        Rupleart within 7 days of delivery. Please provide photos of the damaged item and packaging to 
-        expedite the process.
-      </p>
-      <p className="mb-2 text-sm">
-        <strong>2.2 Significant Discrepancy:</strong> If the artwork received differs significantly from the description or images 
-        provided on the Website, contact the artist directly within 7 days of receipt to discuss a return or 
-        exchange.
-      </p>
-
-      <h2 className="text-md font-semibold mt-6 mb-2">3. Return Process</h2>
-      <p className="mb-2 text-sm">
-        <strong>3.1 Contact:</strong> Buyers should first communicate with Rupleart and then to the artist regarding any return or 
-        refund request. The artist may request that the buyer return the artwork at the buyer’s expense unless 
-        otherwise agreed upon. Rupleart will share the artist’s contact when this process is initiated.
-      </p>
-      <p className="mb-2 text-sm">
-        <strong>3.2 Return Shipment:</strong> If a return is approved, the buyer is responsible for securely packaging the artwork 
-        for return. Any return shipment costs will be borne by the buyer unless the artist agrees otherwise or 
-        the item was misrepresented.
-      </p>
-      <p className="mb-2 text-sm">
-        <strong>3.3 Refunds:</strong> Once the artist confirms receipt of the returned artwork in its original condition, the buyer 
-        will be refunded the purchase price, excluding any shipping fees, via the original payment method. 
-        Please allow up to 14 business days for the refund to process.
-      </p>
-
-      <h2 className="text-md font-semibold mt-6 mb-2">4. Exceptions</h2>
-      <p className="mb-2 text-sm">
-        <strong>4.1 Commissioned Artworks:</strong> Customized or commissioned pieces are non-refundable unless they arrive 
-        damaged.
-      </p>
-      <p className="mb-2 text-sm">
-        <strong>4.2 Digital Art:</strong> Digital artworks and downloadable content are not eligible for returns or refunds.
-      </p>
-
-      <h2 className="text-md font-semibold mt-6 mb-2">5. Dispute Resolution</h2>
-      <p className="mb-2 text-sm">
-        If you are unable to resolve a return or refund issue directly with the artist, you may contact Rupleart 
-        Customer Support at <a href="mailto:rupleart@gmail.com" className="text-blue-600 hover:underline">rupleart@gmail.com</a> or call 
-        0759324250. We will mediate between both parties to reach a fair resolution.
-      </p>
+        <p className="mb-4">
+          We appreciate your understanding and cooperation as we work to provide you with the best possible service and products. If you have any questions or require further clarification regarding our return policy, please do not hesitate to reach out to our customer support team.
+        </p>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-export default ReturnPolicy
+export default ReturnPolicy;

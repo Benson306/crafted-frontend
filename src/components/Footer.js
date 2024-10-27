@@ -73,15 +73,14 @@ function Footer() {
 
             <div className='mb-0 lg:mb-4 mt-10 lg:mt-0'>
                 <div className='font-bold text-white'>OUR COMPANY</div>
-                
-                <Link 
-                onClick={()=>{
+
+                <Link onClick={()=>{
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth',
                     });
                 }}
-                to={"/faq"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>FAQ</Link>
+                to={"/about_us"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>About Us</Link>
 
                 <Link 
                 onClick={()=>{
@@ -98,23 +97,16 @@ function Footer() {
                         behavior: 'smooth',
                     });
                 }}
-                to={"/about_us"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>About Us</Link>
-
-                <Link onClick={()=>{
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth',
-                    });
-                }}
                 to={"/howitworks"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>How it Works</Link>
 
-                <Link onClick={()=>{
+                <Link 
+                onClick={()=>{
                     window.scrollTo({
                         top: 0,
                         behavior: 'smooth',
                     });
                 }}
-                to={"/dcma"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>DCMA Notice</Link>
+                to={"/faq"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>FAQ</Link>
 
                 <Link 
                 onClick={()=>{
@@ -134,14 +126,14 @@ function Footer() {
                 to={"/return"} className='block text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs'>Return Policy</Link>
             </div>
 
-            <div className='mb-0 lg:mb-4 h-0 lg:h-max collapse lg:visible'>
+            <div className='mb-0 lg:mb-4 h-0 lg:h-max hidden lg:block'>
                 <div className='h-0 lg:h-max collapse lg:visible font-bold text-white mb-2 block'>SHOP</div>
                 {
                     !loading && !error && categories.length > 0 && categories.slice(0,6).map(category => 
-                        <div onClick={() => {
-                            navigate("/")
-                        }} className='h-0 lg:h-max collapse lg:visible text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs cursor-pointer '>
+                        <div>
+                        <Link to={"/categoryproducts"} state={{ category }} className='h-0 lg:h-max collapse lg:visible text-gray-400 hover:text-gray-600 mt-2 uppercase text-xs cursor-pointer '>
                             {category.category}
+                        </Link>
                         </div>
                     )
                 }

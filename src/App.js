@@ -31,6 +31,8 @@ import SuccessTransaction from "./components/SuccessTransaction";
 import FailedTransaction from "./components/FailedTransaction";
 import MyOrders from "./components/MyOrders";
 import ProductsPerCategory from "./components/ProductsPerCategory";
+import Testimonials from "./components/Testimonials";
+import OffersRibbon from "./components/OffersRibbon";
 
 function App() {
 
@@ -43,7 +45,13 @@ function App() {
       <Header />
       <div className="flex-grow bg-gray-100 mt-24 lg:mt-28">
         <Routes>
-          <Route path="/" element={<Shop />} />
+          <Route path="/" element={
+            <>
+              <Shop />
+              <OffersRibbon />
+              <Testimonials />
+            </>
+            } />
           <Route path="/preview" element={<Preview />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/login" element={<Login />} />

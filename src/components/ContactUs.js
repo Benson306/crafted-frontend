@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ContactUs() {
 
-    const location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8188944289295!2d36.82347610306517!3d-1.2824647572041252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f112a74848b9b%3A0x34db30f217a96906!2sLatema%20Rd%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1728508285173!5m2!1sen!2ske";
+    const location = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8173187770335!2d36.971052947174755!3d-1.283475340688941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f6cbd139bdde1%3A0x699e5db139f1c28f!2sUtawala%20Crecent%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1730018859576!5m2!1sen!2ske";
 
     const [name, setName] = useState(null);
     const [email, setEmail] = useState(null);
@@ -49,15 +49,16 @@ function ContactUs() {
   return (
     <div>
         <ToastContainer />
-        <div className="relative w-full h-56 lg:h-60 bg-black opacity-80">
-            <img
-                src={require('../images/carousel/purple.jpg')}
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                alt="Background"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-white text-xl lg:text-2xl font-bold">Contact Us</h1>
-            </div>
+        <div className="relative w-full h-56 lg:h-60">
+          <img
+            src={require('../images/carousel/pexels-fotoaibe-1571460.jpg')}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Background"
+          />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-xl lg:text-2xl font-bold text-white">Contact Us</h1>
+          </div>
         </div>
 
         <div className='w-full lg:w-3/4 lg:mx-auto mt-5 text-sm font-montserrat mb-10 p-2 block lg:flex gap-5'>
@@ -67,11 +68,11 @@ function ContactUs() {
             <div className='mb-10 text-sm underline decoration-4 underline-offset-8 font-sans'>Reach Out – We're Here to Help!</div>
             <div className='flex gap-2 items-center mb-5'>
                 <PhoneIcon sx={{fontSize:16}}/>
-                <div>+254 759 324 250</div>
+                <div>+254 792 228 028</div>
             </div>
             <div className='flex gap-2 items-center mb-5'>
                 <EmailIcon sx={{fontSize: 16}} />
-                <div>Rupleart@gmail.com</div>
+                <div>craftedfurniturecollectionke@gmail.com</div>
             </div>
 
             <iframe src={location} className='w-full h-56 border border-gray-300' allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

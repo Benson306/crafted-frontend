@@ -157,7 +157,9 @@ function Header() {
         <div className='hidden lg:flex items-center justify-between shadow-md rounded-b-sm shadow-slate-400 w-full p-2 font-montserrat z-10 text-sm font-bold uppercase py-4'>
             {/* Desktop Menu */}
             <div className='hidden lg:flex items-center gap-10 mx-auto'>
-                <Link to={"/"} className='hover:underline hover: p-1 rounded-2xl' onClick={toggleMenu}>Home</Link>
+                <div className='border border-gray-400 rounded-2xl px-2 py-1 hover:bg-black hover:text-white'>
+                    <Link to={"/"} className='' onClick={toggleMenu}>Home</Link>
+                </div>
                 {
                     categories.slice(0,12).map(category => (
                         <Link to={"/categoryproducts"} state={{ category }} className='hover:underline'>{category.category}</Link>

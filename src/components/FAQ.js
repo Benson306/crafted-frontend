@@ -2,66 +2,47 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    question: "What is Rupleart?",
-    answer: "Rupleart is an online platform that connects artists with buyers. Artists can showcase and sell their artwork, including paintings, drawings, and other visual creations, while art lovers can browse and purchase original pieces from emerging and established artists."
+    question: "What materials are used in your products?",
+    answer: "Our products are crafted from high-quality, sustainable materials chosen for their durability and aesthetic appeal. We prioritize natural materials that enhance the overall beauty and longevity of each piece."
   },
   {
-    question: "How do I create an account on Rupleart?",
-    answer: "Creating an account is simple! Click on the 'Sign Up' button at the top of the homepage. You can sign up as an artist to sell your work or as a buyer to purchase artwork. Fill in the required information, and you're ready to start exploring or listing artwork."
+    question: "Are your products handmade?",
+    answer: "Yes, many of our products are handmade by skilled artisans. This commitment to craftsmanship ensures that every piece is unique and exhibits the highest quality."
   },
   {
-    question: "Who can sell artwork on Rupleart?",
-    answer: "Any artist, whether professional or amateur, can sell their original artwork on Rupleart. You must be at least 18 years old or have reached the legal age in your country. Once you create a seller account, you can list your artwork for sale."
+    question: "How can I care for my product?",
+    answer: "We provide specific care instructions with every product to help maintain its beauty and functionality. Generally, regular cleaning and using appropriate care products will keep your item in excellent condition."
   },
   {
-    question: "How do I list my artwork for sale?",
-    answer: "To list artwork:\n1. Create an artist account.\n2. Click 'Upload Artwork' from your dashboard.\n3. Add high-quality images, a detailed description and price (in Kenyan Shillings).\n4. Publish your listing and wait for art lovers to discover your work!"
+    question: "Do you offer customizations?",
+    answer: "We understand that every customer has unique tastes. Depending on the product, we may offer customization options. Please contact our customer service for more details."
   },
   {
-    question: "How do payments work on Rupleart?",
-    answer: "All payments on Rupleart are processed in Kenyan Shillings (KES). Buyers can pay securely using debit/credit cards, mobile money platforms like M-Pesa, or other supported payment methods. Once the artwork is purchased, the artist will receive payment after the buyer confirms receipt of the item."
+    question: "How long will it take to receive my order?",
+    answer: "Delivery times may vary based on your location and the product you ordered. We strive to process orders as quickly as possible and will provide estimated shipping times with your confirmation."
   },
   {
-    question: "Can I buy artwork if I'm outside Kenya?",
-    answer: "Yes! Rupleart serves customers globally. While all prices are listed in Kenyan Shillings, buyers from outside Kenya can purchase artwork and will see the final conversion to their local currency at checkout. International buyers are responsible for any customs duties or taxes applied by their country."
+    question: "Are your products ethically sourced?",
+    answer: "Yes, we are committed to ethical sourcing and production practices. Our artisans are treated fairly, and we prioritize sustainability in our material sourcing."
   },
   {
-    question: "How is artwork shipped?",
-    answer: "Artists are responsible for shipping their artwork to buyers. When purchasing an artwork, shipping fees are added at checkout. Artists will provide tracking information to the website administrator once the artwork has been shipped and hence the buyer will receive the same information. Delivery times may vary depending on the artist’s location and the buyer’s address."
+    question: "Can I see a product in person before purchasing?",
+    answer: "If you’re located near one of our showrooms or retailers, we welcome you to visit and experience our products in person. Please check our website for locations."
   },
   {
-    question: "What is Rupleart's return policy?",
-    answer: "Since the artwork on Rupleart is often unique and custom, all sales are generally considered final. However, if the artwork arrives damaged or is significantly different from its description, buyers can report the issue within 7 days of receipt. Please refer to our Return Policy for more details."
+    question: "What if my product arrives damaged?",
+    answer: "We strive to ensure that all our products are carefully packaged for transit. However, if your item does arrive damaged, please contact our customer service team immediately with your order information, and we will work to resolve the issue."
   },
   {
-    question: "How do I contact the artist?",
-    answer: "Buyers can contact artists through the Rupleart administrators. To reach an artist:\n1. Submit your inquiry by contacting Rupleart’s support team via WhatsApp or email.\n2. The Rupleart administrators will forward your message to the artist on your behalf.\n3. You will receive a response from the artist, relayed through the Rupleart administrators. This process ensures all communication is managed securely through Rupleart, making it easy to inquire about artwork, custom orders, or commissions."
+    question: "Do you have a loyalty program or discounts for returning customers?",
+    answer: "Yes! We value our returning customers and offer various loyalty programs and seasonal discounts. Sign up for our newsletter to stay updated on promotions."
   },
   {
-    question: "Does Rupleart take a commission on sales?",
-    answer: "Yes, Rupleart takes a small commission on each sale to support the platform and its services. The commission is automatically deducted from the final sale price before the payment is transferred to the artist."
-  },
-  {
-    question: "Can I commission an artist for custom work?",
-    answer: "Absolutely! You can commission a custom piece through Rupleart by contacting our administrators. Simply let us know your specific requirements, and we will connect you with an artist who can create a work tailored to your needs. Our team will handle the communication and ensure that the process runs smoothly. Please note that all commissioned artwork is non-refundable."
-  },
-  {
-    question: "How do I report copyright infringement?",
-    answer: "If you believe your work has been used on Rupleart without your permission, you can file a DMCA Notice through our DMCA Takedown Procedure. We take copyright infringement seriously and will take prompt action to remove infringing content once verified."
-  },
-  {
-    question: "What happens if I forget my password?",
-    answer: "If you've forgotten your password, click on the 'Forgot Password?' link on the login page. You’ll receive an email with instructions to reset your password."
-  },
-  {
-    question: "Can I cancel an order?",
-    answer: "If you need to cancel an order, please contact the Rupleart administrators immediately. Once the artwork has been shipped, cancellation may no longer be possible, and you may need to follow the return process outlined in our Return Policy."
-  },
-  {
-    question: "How do I get in touch with Rupleart support?",
-    answer: "For any questions, issues, or support requests, you can reach out to the Rupleart team at:\nEmail: Rupleart@gmail.com\nPhone: 0759324250"
-  },
+    question: "What makes your products different from mass-produced items?",
+    answer: "Our products are defined by skilled craftsmanship, unique design, and a commitment to quality that sets them apart from mass-produced items. Each piece tells a story and reflects the artisan's dedication to their craft."
+  }
 ];
+
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -72,17 +53,17 @@ const FAQ = () => {
 
   return (
     <div>
-        <div className="relative w-full h-56 lg:h-60 bg-black opacity-80">
-            <img
-                src={require('../images/carousel/purple.jpg')}
-                className="absolute top-0 left-0 w-full h-full object-cover"
-                alt="Background"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-white text-xl lg:text-2xl font-bold">About Us</h1>
-            </div>
+        <div className="relative w-full h-56 lg:h-60">
+          <img
+            src={require('../images/carousel/pexels-fotoaibe-1571460.jpg')}
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            alt="Background"
+          />
+          <div className="absolute inset-0 bg-black opacity-40"></div>
+          <div className="absolute inset-0 flex items-center justify-center z-10">
+            <h1 className="text-xl lg:text-2xl font-bold text-white">Frequently Asked Questions</h1>
+          </div>
         </div>
-
     <div className="max-w-3xl mx-auto p-6 bg-gray-100 rounded-md shadow-lg text-sm mb-10 mt-5">
       {faqs.map((faq, index) => (
         <div key={index} className="border-b last:border-b-0">

@@ -92,49 +92,6 @@ const Products = ({ category }) => {
                         </div>
                     </Link>
                 ))}
-                {!loading && filteredData.map(item => (
-                    <Link 
-                        to={"/preview"} 
-                        className='w-full md:w-1/5 h-96' 
-                        key={item.productName} 
-                        state={{ data: item }}
-                    >
-                        <div className='group relative bg-white p-2 rounded-lg lg:transform lg:transition-transform duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 w-full h-full'>
-                            {/* Image container with consistent size */}
-                            <div className='flex justify-center items-center h-2/3 overflow-hidden'>
-                                <img 
-                                    src={`${process.env.REACT_APP_API_URL}/uploads/${item.image[0]}`} 
-                                    alt={item.productName} 
-                                    className='transition-all duration-300 object-cover w-full h-full rounded-md' 
-                                />
-                            </div>
-
-                            {/* Product name */}
-                            <div className='text-center font-bold mt-2 truncate'>{item.productName}</div>                    
-
-                            {/* Price */}
-                            <div className='text-center font-montserrat text-sm'>Ksh {item.price}</div>
-
-                            {/* Collapsible description */}
-                            <div className='text-center text-sm lg:max-h-10 lg:overflow-hidden group-hover:max-h-20 transition-all duration-300 text-gray-700 overflow-hidden text-ellipsis'>
-                                {item.description}
-                            </div>
-
-                            {/* Add to Cart button */}
-                            <div className='flex justify-center  transition-all duration-300'>
-                                <button 
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleAddToCart(item);
-                                    }}
-                                    className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'
-                                >
-                                    Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </Link>
-                ))}
             </div>
         </div>
     );

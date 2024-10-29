@@ -61,7 +61,7 @@ const Products = ({ category }) => {
                     <img 
                         src={`${process.env.REACT_APP_API_URL}/uploads/${item.image[0]}`} 
                         alt={item.productName} 
-                        className='transition-all duration-300 object-cover w-64 h-64 group-hover:w-60 group-hover:h-60' 
+                        className='transition-all duration-300 object-contain w-64 h-64 group-hover:w-60 group-hover:h-60' 
                     />
                     </div>
 

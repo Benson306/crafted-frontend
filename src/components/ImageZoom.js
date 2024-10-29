@@ -27,7 +27,7 @@ const ImageZoom = ({ imageUrl }) => {
     >
       <img
         src={imageUrl}
-        className={`object-cover w-full h-full transition-transform duration-500 ease-in-out ${
+        className={`object-contain w-full h-full transition-transform duration-500 ease-in-out ${
           hovering ? 'scale-150' : 'scale-100'
         }`}
         style={{

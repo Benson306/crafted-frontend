@@ -7,44 +7,43 @@ const Products = ({ category }) => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
-    const [filteredData,setFilteredData] = useState([]);
+    //const [filteredData, setFilteredData] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}/get_approved_products`)
-        .then((res)=> res.json())
-        .then((res)=>{
-            setProducts(res);
-            setLoading(false);
-        })
-        .catch(err => {
-            console.log(err)
-            setLoading(false);
-            setError(true)
-        })
-    },[])
+            .then((res) => res.json())
+            .then((res) => {
+                setProducts(res);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false);
+                setError(true);
+            });
+    }, []);
 
-    
+    const filteredData = products.filter((item) => {
+        if (category === '' || category === null) {
+            return item;
+        } else if (item.type.toLowerCase().includes(category.toLowerCase())) {
+            return item;
+        }
+    });
 
-    useEffect(()=>{
-        let filteredResult = products.filter((item)=>{
-            if(category === '' || category === null){
-                return item;
-            }else if(
-                item.type.toLowerCase().includes(category.toLowerCase())
-            ){
-                return item;
-            }
-        })
-        setFilteredData(filteredResult)
-    },[category])
+    // Filtering products based on category
+    // useEffect(() => {
+    //     let filteredResult = 
+    //     setFilteredData(filteredResult);
+    // }, [category, products]); // Added products to the dependency array
 
     const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
 
     const handleAddToCart = (data) => {
         addToCart({ ...data, quantity: Number(quantity) });
-    }
-    
+    };
+
     return ( 
         <div className='mt-2 lg:mt-5 mx-2 lg:mx-5'>
             <ToastContainer />
@@ -63,7 +62,6 @@ const Products = ({ category }) => {
                         state={{ data: item }}
                     >
                         <div className='group relative bg-white p-2 rounded-lg lg:transform lg:transition-transform duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 w-full h-full'>
-                            {/* Image container with consistent size */}
                             <div className='flex justify-center items-center h-2/3 overflow-hidden'>
                                 <img 
                                     src={`${process.env.REACT_APP_API_URL}/uploads/${item.image[0]}`} 
@@ -73,20 +71,9 @@ const Products = ({ category }) => {
                             </div>
 
                             <div className='h-1/3'>
-
-                                {/* Product name */}
-                                <div className='text-center font-bold mt-1 truncate'>{item.productName}</div>                    
-
-                                {/* Price */}
+                                <div className='text-center font-bold mt-1 truncate'>{item.productName}</div>
                                 <div className='text-center font-montserrat text-sm'>Ksh {item.price}</div>
-
-                                {/* Collapsible description */}
-                                {/* <div className='text-center text-sm lg:max-h-10 lg:overflow-hidden group-hover:max-h-10 transition-all duration-300 text-gray-700 overflow-hidden overflow-ellipsis'>
-                                    {item.description}
-                                </div> */}
-
-                                {/* Add to Cart button */}
-                                <div className='flex justify-center  transition-all duration-300 mb-5'>
+                                <div className='flex justify-center transition-all duration-300 mb-5'>
                                     <button 
                                         onClick={(e) => {
                                             e.preventDefault();
@@ -97,10 +84,7 @@ const Products = ({ category }) => {
                                         Add to cart
                                     </button>
                                 </div>
-
                             </div>
-
-                            
                         </div>
                     </Link>
                 ))}

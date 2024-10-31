@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useFetcher } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useCart from '../utils/CartContext';
 import { ToastContainer } from 'react-toastify';
@@ -7,6 +7,7 @@ const Products = ({ category }) => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [error, setError] = useState(false);
+    const [filteredData,setFilteredData] = useState([]);
 
     useEffect(()=>{
         fetch(`${process.env.REACT_APP_API_URL}/get_approved_products`)
@@ -22,15 +23,20 @@ const Products = ({ category }) => {
         })
     },[])
 
-    const filteredData = products.reverse().filter((item)=>{
-        if(category === '' || category === null){
-            return item;
-        }else if(
-            item.type.toLowerCase().includes(category.toLowerCase())
-        ){
-            return item;
-        }
-    })
+    
+
+    useEffect(()=>{
+        let filteredResult = products.filter((item)=>{
+            if(category === '' || category === null){
+                return item;
+            }else if(
+                item.type.toLowerCase().includes(category.toLowerCase())
+            ){
+                return item;
+            }
+        })
+        setFilteredData(filteredResult)
+    },[category])
 
     const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
@@ -52,8 +58,8 @@ const Products = ({ category }) => {
                 {!loading && filteredData.map(item => (
                     <Link 
                         to={"/preview"} 
-                        className='w-full md:w-1/5 h-96' 
-                        key={item.productName} 
+                        className='w-full md:w-1/4 p-2' 
+                        key={item._id } 
                         state={{ data: item }}
                     >
                         <div className='group relative bg-white p-2 rounded-lg lg:transform lg:transition-transform duration-300 ease-in-out hover:shadow-lg hover:-translate-y-1 w-full h-full'>
@@ -62,33 +68,39 @@ const Products = ({ category }) => {
                                 <img 
                                     src={`${process.env.REACT_APP_API_URL}/uploads/${item.image[0]}`} 
                                     alt={item.productName} 
-                                    className='transition-all duration-300 object-cover w-full h-full rounded-md' 
+                                    className='transition-all duration-300 object-contain w-full h-56 rounded-md' 
                                 />
                             </div>
 
-                            {/* Product name */}
-                            <div className='text-center font-bold mt-2 truncate'>{item.productName}</div>                    
+                            <div className='h-1/3'>
 
-                            {/* Price */}
-                            <div className='text-center font-montserrat text-sm'>Ksh {item.price}</div>
+                                {/* Product name */}
+                                <div className='text-center font-bold mt-1 truncate'>{item.productName}</div>                    
 
-                            {/* Collapsible description */}
-                            <div className='text-center text-sm lg:max-h-10 lg:overflow-hidden group-hover:max-h-20 transition-all duration-300 text-gray-700 overflow-hidden text-ellipsis'>
-                                {item.description}
+                                {/* Price */}
+                                <div className='text-center font-montserrat text-sm'>Ksh {item.price}</div>
+
+                                {/* Collapsible description */}
+                                {/* <div className='text-center text-sm lg:max-h-10 lg:overflow-hidden group-hover:max-h-10 transition-all duration-300 text-gray-700 overflow-hidden overflow-ellipsis'>
+                                    {item.description}
+                                </div> */}
+
+                                {/* Add to Cart button */}
+                                <div className='flex justify-center  transition-all duration-300 mb-5'>
+                                    <button 
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            handleAddToCart(item);
+                                        }}
+                                        className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'
+                                    >
+                                        Add to cart
+                                    </button>
+                                </div>
+
                             </div>
 
-                            {/* Add to Cart button */}
-                            <div className='flex justify-center  transition-all duration-300'>
-                                <button 
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        handleAddToCart(item);
-                                    }}
-                                    className='bg-black hover:bg-gray-600 text-white p-2 text-sm uppercase rounded-lg mt-2'
-                                >
-                                    Add to cart
-                                </button>
-                            </div>
+                            
                         </div>
                     </Link>
                 ))}

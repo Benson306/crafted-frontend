@@ -65,7 +65,7 @@ const Shop = () => {
                 </div>
                 <NewFurniture />
         </div>
-        <div className='w-full lg:w-5/6'>
+        <div className='w-full'>
             <div className="flex justify-center lg:justify-end gap-2 text-sm items-center mt-2 lg:mt-5 lg:mr-5">
                 <div>Sort By Category: </div>
                 <select 

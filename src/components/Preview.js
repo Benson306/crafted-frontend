@@ -10,6 +10,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import { Twitter } from "@mui/icons-material";
 import RelatedProducts from "./RelatedProducts";
 import NewFurniture from "./NewFurniture";
+import SellIcon from '@mui/icons-material/Sell';
 
 const Preview = () => {
 
@@ -122,7 +123,16 @@ const Preview = () => {
                                 <div className="">Size:</div>
                                 <div>{data.size}</div>            
                             </div>
-                            <div className="my-2 lg:my-2  font-extrabold">Ksh {data.price}</div>
+
+                            <div className='text-center font-montserrat text-xs flex mt-5 gap-2'>
+                                    <div>Was</div> <div className='line-through'>Ksh {data.beforePrice}</div>
+                                </div>
+                                <div className='text-center font-montserrat text-base flex gap-2 font-bold'>
+                                    <div>Now</div> <div className=''>Ksh {data.price}</div>
+                                </div>
+                                <div className='flex items-center gap-1 text-xs text-red-500'>
+                                    <SellIcon sx={{fontSize: 14}} /> Save {data.beforePrice - data.price}/=
+                                </div>
                           
                             <div className="flex gap-2 items-center my-2 mt-4">
                                 <div className="">Quantity</div>

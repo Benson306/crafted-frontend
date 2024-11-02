@@ -36,7 +36,7 @@ function NewFurniture() {
                         />
                         <div className='mt-1'>
                             <div className='font-semibold hover:font-extrabold text-xs'>{item.productName}</div>                    
-                            <div className=' hover:text-purple-700 font-montserrat text-xs mt-2'>Ksh {item.price}</div>
+                            <div className=' hover:text-purple-700 font-montserrat text-xs mt-2'>Ksh {item.price.toLocaleString()}</div>
                         </div>
                     </Link>
                 )

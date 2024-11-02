@@ -74,13 +74,13 @@ const Products = ({ category }) => {
                             <div className='h-1/3'>
                                 <div className='text-center font-bold mt-1 truncate'>{item.productName}</div>
                                 <div className='text-center font-montserrat text-xs flex justify-center gap-2'>
-                                    <div>Was</div> <div className='line-through'>Ksh {item.beforePrice}</div>
+                                    <div>Was</div> <div className='line-through'>Ksh {Number(item.beforePrice).toLocaleString()}</div>
                                 </div>
                                 <div className='text-center font-montserrat text-sm flex justify-center gap-2 font-bold'>
-                                    <div>Now</div> <div className=''>Ksh {item.price}</div>
+                                    <div>Now</div> <div className=''>Ksh {item.price.toLocaleString()}</div>
                                 </div>
                                 <div className='flex justify-center items-center gap-1 text-xs text-red-500'>
-                                    <SellIcon sx={{fontSize: 14}} /> Save {item.beforePrice - item.price}/=
+                                    <SellIcon sx={{fontSize: 14}} /> Save { Number(item.beforePrice - item.price).toLocaleString()}/=
                                 </div>
                                 <div className='flex justify-center transition-all duration-300 mb-5'>
                                     <button 

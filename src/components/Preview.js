@@ -125,13 +125,13 @@ const Preview = () => {
                             </div>
 
                             <div className='text-center font-montserrat text-xs flex mt-5 gap-2'>
-                                    <div>Was</div> <div className='line-through'>Ksh {data.beforePrice}</div>
+                                    <div>Was</div> <div className='line-through'>Ksh {Number(data.beforePrice).toLocaleString()}</div>
                                 </div>
                                 <div className='text-center font-montserrat text-base flex gap-2 font-bold'>
-                                    <div>Now</div> <div className=''>Ksh {data.price}</div>
+                                    <div>Now</div> <div className=''>Ksh {data.price.toLocaleString()}</div>
                                 </div>
                                 <div className='flex items-center gap-1 text-xs text-red-500'>
-                                    <SellIcon sx={{fontSize: 14}} /> Save {data.beforePrice - data.price}/=
+                                    <SellIcon sx={{fontSize: 14}} /> Save { Number(data.beforePrice - data.price).toLocaleString()}/=
                                 </div>
                           
                             <div className="flex gap-2 items-center my-2 mt-4">

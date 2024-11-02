@@ -21,7 +21,7 @@ const SuccessTransaction = () => {
                     Your Order Has Been Placed Succesfully. 
                 </div>
                 <div className="flex justify-center text-center px-10 ml-5 text-lg text-gray-600  mb-3 lg:mb-5">
-                    You will be contacted by a Rupleart agent within the next few hours to make arrangements on delivery.
+                    You will be contacted by a Crafted Furniture Collections agent within the next few hours to make arrangements on delivery.
                 </div>
                 <div className="flex justify-center text-center mb-4 px-10 ml-5 text-lg">
                     Thank You!

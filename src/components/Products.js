@@ -26,11 +26,11 @@ const Products = ({ category }) => {
 
     const filteredData = products.filter((item) => {
         if (category === '' || category === null) {
-            return item;
-        } else if (item.type.toLowerCase().includes(category.toLowerCase())) {
-            return item;
+          return item;
+        } else if (item.type && item.type.includes(category)) {
+          return item;
         }
-    });
+      });
 
     // Filtering products based on category
     // useEffect(() => {

@@ -205,10 +205,36 @@ function Header() {
                     <Link to={"/"} className='' onClick={toggleMenu}>Home</Link>
                 </div>
                 {
-                    categories.slice(0,12).map(category => (
+                    categories.slice(0,7).map(category => (
                         <Link to={"/categoryproducts"} state={{ category }} className='hover:underline'>{category.category}</Link>
                     ))
                 }
+                {
+                categories.length > 7 && (
+                    <div className="border border-gray-400 rounded-2xl px-2 py-1">
+                        <select
+                        className="p-2 rounded-md border-none text-black font-bold"
+                        onChange={(e) => {
+                            const selectedCategory = categories.find(
+                            (cat) => cat.category === e.target.value
+                            );
+                            if (selectedCategory) {
+                            // Navigate to the selected category page and close the menu
+                            navigate("/categoryproducts", { state: { category: selectedCategory } });
+                            toggleMenu();
+                            }
+                        }}
+                        defaultValue=""
+                        >
+                        <option value="" disabled>Select More Categories</option>
+                        {categories.slice(7).map((category) => (
+                            <option key={category._id} value={category.category}>
+                            {category.category}
+                            </option>
+                        ))}
+                        </select>
+                    </div>
+                )}
             </div>
         </div>  
         </div>

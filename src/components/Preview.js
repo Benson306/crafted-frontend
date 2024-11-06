@@ -113,7 +113,7 @@ const Preview = () => {
                         <div className="text-sm">
                             <div className="flex gap-2 items-center my-2">
                                 <div className="">Category:</div>
-                                <div className="">{data.type}</div>            
+                                <div className="flex flex-wrap gap-1">{data.type.map( tp => <span className="bg-gray-300 rounded-lg px-2 py-1">{tp}</span>)}</div>            
                             </div>
                             <div className="flex gap-2 items-center my-2">
                                 <div className="">Description:</div>

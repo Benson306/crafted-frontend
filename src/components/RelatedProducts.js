@@ -20,16 +20,14 @@ function RelatedProducts({category}) {
         })
     },[])
 
-    const filteredData = products.reverse().filter((item)=>{
-                    
-        if(category === '' || category === null){
-            return item;
-        }else if(
-            item.type.toLowerCase().includes(category.toLowerCase())
-        ){
-            return item;
+    const filteredData = products.filter((item) => {
+        if (!category || category.length === 0) {
+          return item;
+        } else if (item.type && category.some((cat) => item.type.includes(cat))) {
+          return item;
         }
-    })
+      });
+
   return (
     <div className='mb-10'>
       <div className='font-bold border-b-2 border-purple-900 hover:border-purple-700 w-40 text-center uppercase text-sm mx-5 lg:mx-0'>Related Products</div>

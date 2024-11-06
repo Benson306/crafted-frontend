@@ -187,7 +187,6 @@ function MyProfile() {
                         initialValues={{ currentPassword: '', newPassword: '', confirmNewPassword: '' }}
                         validationSchema={passwordSchema}
                         onSubmit={(values) => {
-                            console.log(values);
                             handleModalSubmit(values);
                         }}
                     >
